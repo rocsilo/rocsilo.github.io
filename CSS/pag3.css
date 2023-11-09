@@ -1,0 +1,34 @@
+/*etiqueta {atribut:valor  } */
+h3
+{
+    color:red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:32px;;
+    background-color: rgba(228, 245, 220, 0.432);
+}
+
+li
+{
+    color: blue;
+    font-weight:bold; /*negreta*/
+    font-style: italic; /*cursiva*/
+}
+
+dt
+{
+    color: blueviolet;
+}
+
+dd
+{
+    color: gold;
+}
+
+
+body
+{
+    background-color: rgba(226, 250, 215, 0.527);
+    background-image:url(../imagen/killua.jpg);
+    background-repeat: no-repeat;
+}
+
