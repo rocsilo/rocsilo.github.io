@@ -1,8 +1,18 @@
+
+
+
 th,table,td
 {
     border-width: 2px;
     border-style: solid;
     border-collapse: collapse;
+}
+
+.tdhoras
+{
+    text-align: center;
+    width: 10px;
+    height: 10px;
 }
 
 td
@@ -47,9 +57,7 @@ td
     text-align: center;
 }
 
-.tdhoras
+#provenzana
 {
-    text-align: center;
-    width: 10px;
-    height: 10px;
+    width: 50px;
 }
