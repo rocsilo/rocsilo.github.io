@@ -1,0 +1,55 @@
+th,table,td
+{
+    border-width: 2px;
+    border-style: solid;
+    border-collapse: collapse;
+}
+
+td
+{
+    width: 100px;
+    height: 70px;
+}
+
+.tdasignaturas
+{
+    width: 100px;
+    height: 50px;
+}
+
+.bardaji
+{
+    text-align: center;
+}
+
+.gomez
+{
+    text-align: center; 
+}
+
+.campaña
+{
+    text-align: center; 
+}
+
+.montesinos
+{
+    text-align: center;
+}
+
+.duran
+{
+    text-align: center;
+}
+
+#descans
+{
+    text-align: center;
+}
+
+.tdhoras
+{
+    text-align: center;
+    width: 10px;
+    height: 3px;
+}

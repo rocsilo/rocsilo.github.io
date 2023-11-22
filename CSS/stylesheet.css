@@ -11,3 +11,10 @@ td
     border-style: solid;
     border-collapse: collapse;
 }
+
+th
+{
+    border-width: 2px;
+    border-style: solid;
+    border-collapse: collapse;
+}
