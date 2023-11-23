@@ -1,27 +1,45 @@
 
-
-
-th,table,td
+th,td
 {
     border-width: 2px;
     border-style: solid;
     border-collapse: collapse;
 }
 
+table
+{
+    border-width: 2px;
+    border-style: solid;
+    border-collapse: collapse;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .tdhoras
 {
     text-align: center;
-    width: 10px;
-    height: 10px;
+    width: 60px!important;
+    height: 60px!important;
+    background-color: rgba(248, 112, 8, 0.597);
+}
+.thdias
+{
+    text-align: center;
+    width: 60px!important;
+    height: 60px!important;
+    background-color: rgba(248, 112, 8, 0.597);
 }
 
 td
 {
-    width: 100px;
-    height: 70px;
+    width: 110px;
+    height: 40px;
+    
 }
 
-.tdasignaturas
+
+.asignatura
 {
     width: 100px;
     height: 50px;
@@ -30,34 +48,52 @@ td
 .bardaji
 {
     text-align: center;
+    background-color: rgba(137, 43, 226, 0.597);
+    
 }
 
 .gomez
 {
     text-align: center; 
+    background-color: rgba(46, 226, 43, 0.597);
 }
 
 .campaña
 {
-    text-align: center; 
+    text-align: center;
+    background-color: rgba(226, 198, 43, 0.597);
 }
 
 .montesinos
 {
     text-align: center;
+    background-color: rgba(226, 43, 186, 0.597);
+    
 }
 
 .duran
 {
     text-align: center;
+    background-color: rgba(43, 83, 226, 0.597);
 }
 
-#descans
+#pati
 {
     text-align: center;
+    background-color: rgba(170, 46, 52, 0.686);
 }
 
 #provenzana
 {
     width: 50px;
+}
+
+#centrar
+{
+    text-align: center;
+}
+
+#dreta
+{
+    text-align: right;
 }
