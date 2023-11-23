@@ -1,3 +1,9 @@
+@font-face 
+{
+    font-family: fontlocal;
+    src: url(../fonts/Kanit/Kanit-Black.ttf);
+}
+
 
 th,td
 {
@@ -19,15 +25,15 @@ table
 .tdhoras
 {
     text-align: center;
-    width: 60px!important;
-    height: 60px!important;
+    width: 60px;
+    height: 60px;
     background-color: rgba(248, 112, 8, 0.597);
 }
 .thdias
 {
     text-align: center;
-    width: 60px!important;
-    height: 60px!important;
+    width: 60px;
+    height: 60px;
     background-color: rgba(248, 112, 8, 0.597);
 }
 
@@ -43,12 +49,20 @@ td
 {
     width: 100px;
     height: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: underline;
+    color: rgb(0, 0, 0);
+    font-style: bold;
 }
 
 .bardaji
 {
     text-align: center;
     background-color: rgba(137, 43, 226, 0.597);
+    font-family: fontlocal;
+
     
 }
 
@@ -56,6 +70,7 @@ td
 {
     text-align: center; 
     background-color: rgba(46, 226, 43, 0.597);
+    font-family: vina sans;
 }
 
 .campaña
@@ -88,7 +103,7 @@ td
     width: 50px;
 }
 
-#centrar
+.centrar
 {
     text-align: center;
 }
@@ -97,3 +112,4 @@ td
 {
     text-align: right;
 }
+
