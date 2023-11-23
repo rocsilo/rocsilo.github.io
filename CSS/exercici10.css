@@ -113,3 +113,8 @@ td
     text-align: right;
 }
 
+#imagenmedio
+{
+    margin-right: auto;
+    margin-left: auto;
+}
