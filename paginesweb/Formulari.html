@@ -12,22 +12,61 @@
     <form action="../PHP/formulari.php">
         <h1 class="medio">Curriculum</h1>
         <fieldset class="medida" id="informacio">
-          <legend class="legendsubrrallat">Informació Basica</legend>
+          <legend id=informaciotext class="legendsubrrallat">Informació Basica</legend>
           <label for="fname" class="texto1">First name:</label><br>
-          <input type="text" value="tu nombre"id="fname" name="nombre"><br><br>
+          <input type="text" placeholder="Nombre y Apellido" name="nombre"><br><br>
           <label for="fname" class="texto1">Altura en centimetros:</label><br>
-          <input type="number" id="fname" name="altura"><br><br>
+          <input type="number" id="fname" name="altura" placeholder="182" min="0" max="300" ><br><br>
           <label for="fname" class="texto1">Email:</label><br>
-          <input type="number" id="fname" name="email"><br><br>
+          <input type="text" placeholder="exemple@gmail.com" name="email"><br><br>
           <label for="fname" class="texto1">Fecha de naciemiento</label><br>
-          <input type="date" id="fname" name="fecha"><br><br>
-        </fieldset>
+          <input type="date" name="fecha"><br><br>
+        </fieldset><br>
 
-       
+     
+          <fieldset class="medida" id="nacionalidad">
+            <legend id=nacionalidadtext class="legendsubrrallat">Nacionalidad</legend>
+            <input type="radio" name="nacionalidad">
+            <label>Española</label>
+            <input type="radio" name="nacionalidad">
+            <label>Comunitario(UE)</label>
+            <input type="radio" name="nacionalidad">
+            <label>No comunitario</label>
+            
+          </fieldset><br>
+
+          <fieldset class="medida" id="estudios">
+            <legend id=estudiostext class="legendsubrrallat">Estudios</legend>
+            <select name="estudios">
+            <option value="ESO">ESO</option>
+            <option value="GM">GM</option>
+            <option value="GS">GS</option>
+            <option value="Universidad">Universidad</option>
+            </select> 
+          </fieldset><br>
+
+          <fieldset class="medida" id="idiomas">
+            <legend id=idiomastext class="legendsubrrallat idiomas">idiomas</legend>
+            <input id="Catalá" value="Catalá" type="checkbox" name="idiomas[]">
+            <label for="Catalá">Catalán</label>
+            <input id="Castellano" value="Castellano" type="checkbox" name="idiomas[]">
+            <label for="Castellano">Castellano</label>
+            <input id="ingles" value="ingles" type="checkbox" name="idiomas[]">
+            <label for="ingles">Inglés</label>
+            <input id="chino" value="chino" type="checkbox" name="idiomas[]">
+            <label for="chino">Chino</label>
+            </fieldset><br>
+
+         <fieldset class="medida" id="enviarcancelar">
+         <input  type="submit" value="Enviar">
+         <input  type="reset" name="Cancelar" value="Cancelar">
+         </fieldset>
+
       </form> 
 
 
-    <pre> <a href="ex4.html">Anar a la pagina principal</a> </pre>
-    <img src="" alt="">
+    <pre class="medio"> <a href="../index.html">Anar a la pagina principal</a> </pre>
+    <img src="/check/comprovacioformulari.PNG" alt="comprovació">
+    
 </body>
 </html>

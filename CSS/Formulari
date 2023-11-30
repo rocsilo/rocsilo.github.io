@@ -6,7 +6,7 @@
 
 .medida
 {
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
 
@@ -24,4 +24,49 @@
 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 13px
+}
+
+#nacionalidad
+{
+    background-color: rgba(104, 235, 17, 0.555);
+}
+
+#estudios
+{
+    background-color: rgba(11, 221, 221, 0.555);
+}
+
+#idiomas
+{
+    background-color: rgba(137, 17, 235, 0.555);
+    
+}
+
+#enviarcancelar
+{
+    background-color: rgba(235, 17, 126, 0.555);
+}
+
+#idiomastext
+{
+    color:red;
+    font-style:italic;  
+}
+    
+
+#nacionalidadtext
+{
+    color:orange;
+    font-style:italic;   
+}
+
+#estudiostext
+{
+    
+}
+
+#informaciotext
+{
+    color: blue;
+    font-style: italic;
 }
