@@ -1,0 +1,93 @@
+div
+{
+    
+}
+
+#principal
+{
+    border: 3px solid red;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+}
+
+#box1
+{
+    float: left;
+    width: 70%;
+    height: 50px;
+    background-color: blue;
+
+}
+
+#box2
+{
+    float: right;
+    width: 30%;
+    height: 50px;
+    background-color: blueviolet;
+}
+
+#box3
+{
+    float: left;
+    width: 33% ;
+    height: 100px;
+    background-color: red;
+    
+}
+
+#box4
+{
+    float: left;
+    width: 33% ;
+    height: 100px;
+    background-color: yellow;
+    
+}
+
+#box5
+{
+    float: right;
+    width: 30%;
+    height: 50px;
+    background-color: rgb(226, 43, 150);
+}
+
+#box6
+{
+    float: right;
+    width: 30%;
+    height: 50px;
+    background-color: rgb(116, 226, 43);
+}
+
+#box7
+{
+    float: left;
+}
+
+#box8
+{
+    float: left;
+}
+
+#box9
+{
+    float: left;
+}
+
+#box10
+{
+    float: left;
+}
+
+#box11
+{
+    float: left;
+}
+
+#box12
+{
+    float: left;
+}

@@ -4,11 +4,6 @@
     font-weight: bolder;
 }
 
-.medida
-{
-    width: 60%;
-    margin: auto;
-}
 
 #informacio
 {
