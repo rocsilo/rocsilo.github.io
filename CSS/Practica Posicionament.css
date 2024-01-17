@@ -1,6 +1,6 @@
 div
 {
-    
+    color: white;
 }
 
 #principal
@@ -9,13 +9,42 @@ div
     width: 600px;
     height: 600px;
     text-align: center;
+    line-height: -10px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
+
+#title
+{
+    margin-left: 200px;
+    margin-right: 200px;
+    font-style: oblique;
+    text-decoration: underline;
+   
+}
+
+#autor
+{
+    text-align: left;
+    font-style: oblique;
+    font-size: smaller;
+    margin-left: 60px;
+
+}
+.en_el_medio_medio
+{  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
 
 #box1
 {
     float: left;
     width: 70%;
-    height: 50px;
+    height: 100px;
     background-color: blue;
 
 }
@@ -24,7 +53,7 @@ div
 {
     float: right;
     width: 30%;
-    height: 50px;
+    height: 100px;
     background-color: blueviolet;
 }
 
@@ -32,7 +61,7 @@ div
 {
     float: left;
     width: 35% ;
-    height: 100px;
+    height: 200px;
     background-color: red;
     
 }
@@ -41,8 +70,8 @@ div
 {
     float: left;
     width: 35% ;
-    height: 100px;
-    background-color: yellow;
+    height: 200px;
+    background-color: rgb(255, 72, 0);
     
 }
 
@@ -50,7 +79,7 @@ div
 {
     float: right;
     width: 30%;
-    height: 50px;
+    height: 100px;
     background-color: rgb(226, 43, 150);
 }
 
@@ -58,7 +87,7 @@ div
 {
     float: right;
     width: 30%;
-    height: 50px;
+    height: 100px;
     background-color: rgb(116, 226, 43);
 }
 
@@ -66,32 +95,49 @@ div
 {
     float: left;
     width: 70%;
-    height: 50px;
-    background-color: rgb(94, 255, 0);
+    height: 100px;
+    background-color: rgb(23, 56, 4);
 
 }
 
 #box8
 {
-    float: left;
+    float: right;
+    width: 30%;
+    height: 200px;
+    background-color: rgb(214, 99, 4);
 }
 
 #box9
 {
     float: left;
+    width: 70%;
+    height: 100px;
+    background-color: rgb(88, 85, 116);
+
 }
 
 #box10
 {
+    
     float: left;
+    width: 35%;
+    height: 100px;
+    background-color: rgb(99, 16, 148);
 }
 
 #box11
 {
     float: left;
+    width: 35%;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
 }
 
 #box12
 {
-    float: left;
+    float: right;
+    width: 30%;
+    height: 100px;
+    background-color: rgb(252, 13, 212);
 }
