@@ -1,0 +1,88 @@
+#tot
+{
+    background-color: grey;
+    border: 2%;
+}
+
+header{
+    background-color: lightblue;
+    height: 100px;
+
+}
+
+#logo
+{
+height: 100px;
+width: 100px;
+float: left;
+}
+
+section
+{
+    display: grid;
+    grid-template-columns: 25% 45% 30%;
+}
+
+
+nav
+{
+    /*float: left;*/
+    background-color: plum;
+    margin-top: 10px;
+    height: 400px;
+    /*width: 20%;*/
+    grid-column: 1 / 2;
+}
+
+main
+{
+    margin-top: 10px;
+    background-color:salmon;
+    grid-column: 2 / 3;
+    /*width: 48%;
+    float: left;*/
+    height: 400px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+article
+{
+    grid-column: 3 / 4;
+    /*float: left;*/
+    background-color: plum;
+    margin-top: 10px;
+    height: 400px;
+    /*width: 20%;*/
+}
+
+
+footer
+{
+    display: grid;
+    grid-template-columns: 25% 45% 30%;
+    margin-top: 10px;
+    height: 100px;
+}
+
+#div1
+{
+  
+    background-color: olivedrab;
+}
+
+#div2
+{
+    
+    background-color: green;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+#div3
+{
+    
+    background-color: olive;
+    
+}
+
