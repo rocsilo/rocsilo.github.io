@@ -1,0 +1,294 @@
+
+
+#tot
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    
+}
+
+
+
+
+header{
+    background-color: black;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    
+  
+}
+
+#titol
+{
+    margin-top: 20px;
+    text-align: center;
+    font-style: oblique;
+    font-style: italic; 
+    grid-column: 2 / 3;
+    font-size: 80px;
+    color: white;
+    
+}
+
+#text
+{
+    color: white;
+}
+
+.logo
+{
+    height: 100px;
+    width: 100px;
+    grid-column: 1 / 2;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+#divsection
+{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    height: 800px;
+}
+
+
+nav
+{
+    
+    /*float: left;*/
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    /*width: 20%;*/
+    grid-column: 1 / 2;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: yellow; /* Color del centro del texto */
+    text-shadow: 
+      -1px -1px 0 rgb(0, 0, 0),  
+       1px -1px 0 rgb(0, 0, 0),
+      -1px  1px 0 rgb(0, 0, 0),
+       1px  1px 0 rgb(0, 0, 0); /* Contorno del texto con color rojo */
+    padding: 10px; /* Añadir relleno para destacar el efecto */
+    display: inline-block; /* Evitar que el fondo ocupe todo el ancho */
+   
+    
+}
+
+a:hover {
+    background-color: yellow;
+  }
+
+main
+{
+   
+    background-color:skyblue;
+    grid-column: 2 / 3;
+    /*width: 48%;
+    float: left;*/
+    height: 100%;
+    background-image: url(../imagen/fight.jpg);
+    background-position: center;
+    background-size: cover;
+    
+   
+    
+}
+
+article
+{
+    grid-column: 3 / 4;
+    /*float: left;*/
+    background-color: plum;
+    height: 100%;
+    /*width: 20%;*/
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    background-image: url(../imagen/red.jpg);
+    background-position: center;
+    
+}
+
+
+footer
+{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    height: 100px;
+    
+}
+
+#div1
+{
+  
+    background-color: rgb(34, 36, 56);
+}
+
+#div2
+{
+    text-align: center;
+    background-color: rgb(46, 48, 46);
+    position: relative;
+}
+
+
+#foto1
+{
+    position: absolute;
+    margin-left: 70px;
+    height: 100px;
+    width: 100px;
+}
+
+#foto2
+{
+    position: absolute;
+    margin-left: 15px;
+    height: 100px;
+    width: 100px;
+}
+
+#foto3
+{
+    position: absolute;
+    margin-left: 120px;
+    height: 100px;
+    width: 100px;
+}
+
+#div3
+{
+    
+    background-color: olive;
+   
+    
+}
+
+
+
+
+
+#divtext
+{
+    display: grid;
+    grid-template-columns: 40% 60% ;
+
+}
+
+#mig
+{
+    margin-top: 15%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    font-weight: bold;
+    color: #00f; /* Color del centro del texto */
+    text-shadow: 
+      -1px -1px 0 rgb(0, 0, 0),  
+       1px -1px 0 rgb(0, 0, 0),
+      -1px  1px 0 rgb(0, 0, 0),
+       1px  1px 0 rgb(0, 0, 0); /* Contorno del texto con color rojo */
+    padding: 10px; /* Añadir relleno para destacar el efecto */
+    display: inline-block; /* Evitar que el fondo ocupe todo el ancho */
+}
+
+#text0
+{
+    margin-top: 30px;
+    color: rgb(38, 125, 184);
+    font-size: 20px;
+    font-family:Oswald;  /*No es nota molt la diferencia pero si que ho he fet.    */
+    font-size: 20px;
+  
+
+}
+
+#text1
+{
+    color: yellow;
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+#text2
+{
+    color: yellow;
+    font-size: 15px;
+    margin-top: 5px;
+    
+}
+
+
+
+#text3
+{
+    color: yellow;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+
+
+#text4
+{
+    color: yellow;
+    font-size: 25px;
+    margin-top: -15px;
+}
+
+
+
+#text5
+{
+    color: yellow;
+    font-size: 30px;
+    margin-top: -20px;
+}
+
+
+
+#text6
+{
+    color: yellow;
+    font-size: 35px;
+    margin-top: -25px;
+   
+}
+
+
+#text7
+{
+    color: yellow;
+    font-size: 40px;
+    margin-top: -30px;
+    
+}
+
+
+#links
+{
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 33% 33% 33% ;
+    color: white;
+}
+
+#linkesquerra
+{
+    grid-column: 1/2;
+    
+}
+
+#linkmig
+{
+    grid-column: 2/3;
+    
+}
+
+#linkdreta
+{
+    grid-column: 3/4;
+    
+}
+
