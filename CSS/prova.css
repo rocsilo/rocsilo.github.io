@@ -1,0 +1,57 @@
+
+
+  #grad {
+    background-image: linear-gradient(to right, red , yellow);
+    text-align: center;
+    height: 50px;
+  }
+
+  #grad2 {
+    background-image: linear-gradient(to bottom right, red, yellow);
+    text-align: left;
+    height: 50px;
+  }
+
+  #sombra
+  {
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+  }
+
+  #movidin
+  {
+    transform: rotate(20deg);
+    margin-top: 50%;
+    background-color: aquamarine;
+  }  
+
+  #transform 
+  {
+    transform: translate(50px, 100px);
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+  }
+
+  #amplio
+  {
+    transform: scale(2, 3);
+    height: 100px;
+    width: 100px;
+    background-color: rgb(166, 255, 0);
+    margin-left: 100px;
+  }
+  
+#uop
+  {
+    transition: width 2s, height 2s, transform 2s;
+    background-color: teal;
+  }
+  
+  #uop:hover {
+    width: 300px;
+    height: 300px;
+    transform: rotate(180deg);
+  }
+

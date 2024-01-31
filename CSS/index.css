@@ -157,13 +157,7 @@ footer
     width: 100px;
 }
 
-#div3
-{
-    
-    background-color: olive;
-   
-    
-}
+
 
 
 
@@ -206,14 +200,14 @@ footer
 
 #text1
 {
-    color: yellow;
+   
     font-size: 10px;
     margin-bottom: 2px;
 }
 
 #text2
 {
-    color: yellow;
+    
     font-size: 15px;
     margin-top: 5px;
     
@@ -223,7 +217,7 @@ footer
 
 #text3
 {
-    color: yellow;
+    
     font-size: 20px;
     margin-top: -10px;
 }
@@ -291,4 +285,98 @@ footer
     grid-column: 3/4;
     
 }
+
+/*CSS*/
+
+/*El border radius ja el tenia fet */
+
+/*2.- Color amb transparència */
+
+#text1
+{
+ color: tomato;
+}
+
+#text2
+{
+ color: rgba(255, 99, 71, 0.664);
+}
+
+#text3
+{
+    color: rgba(255, 99, 71, 0.253);
+}
+
+#text4
+{
+ color: skyblue;
+}
+
+#text5
+{
+ color: rgba(135, 207, 235, 0.76);
+}
+
+#text6
+{
+ color: rgba(135, 207, 235, 0.473); 
+}
+
+/* 3.-  Gradiente */
+
+#div1
+{
+    background-image: linear-gradient(to right, red , yellow);
+    text-align: center;
+}
+
+#div2
+{
+    background-image: linear-gradient(to bottom right, red, yellow);
+    text-align: left;
+}
+
+/* 4.- Sombras */
+
+#text7
+{
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+}
+
+/* 5.- Transformaciones*/
+
+#foto1
+{
+    transform: rotate(20deg);
+}
+
+#foto2
+{
+    transform: translate(10px, 10px);
+}
+
+#foto
+{
+     transform: scale(2, 3);
+}
+/* 6 */
+#div3
+{
+   
+    transition: width 2s, height 2s, transform 2s;
+    background-color: palevioletred;
+}
+
+
+/* 7.- Animaciones (optatiu, puja nota, però no obligatori) */
+
+#div3
+{
+   
+    transition: width 2s, height 2s, transform 2s;
+    background-color: palevioletred;
+}
+
 
