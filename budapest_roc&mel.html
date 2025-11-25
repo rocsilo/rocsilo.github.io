@@ -1,1 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roc & Mel - Nuestra Aventura en Budapest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d43571;
+            --secondary: #0059a3;
+            --light: #f8f9fa;
+            --dark: #333;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary), #b32c5d);
+            color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .couple-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            font-weight: 300;
+        }
+        
+        .couple-title span {
+            font-weight: 600;
+        }
+        
+        header p {
+            opacity: 0.9;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .date-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin: 15px 0;
+            position: relative;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .tabs {
+            display: flex;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 18px 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: var(--dark);
+            border-bottom: 3px solid transparent;
+            min-width: 120px;
+        }
+        
+        .tab:hover {
+            background: #f0f0f0;
+        }
+        
+        .tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .tab i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 30px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .day-title {
+            color: var(--primary);
+            border-left: 4px solid var(--secondary);
+            padding-left: 15px;
+            margin: 20px 0 25px;
+            font-size: 1.8rem;
+        }
+        
+        .activity {
+            margin: 25px 0;
+            padding: 20px;
+            border-radius: var(--radius);
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .activity:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .time {
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .price-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .transport-card, .budapest-card, .budget-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .card-title {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+        }
+        
+        .card-title i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .savings-calc {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: var(--radius);
+            margin: 25px 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .note {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: var(--radius);
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 15px 0;
+            transition: all 0.3s;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            background: #b32c5d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #004080;
+        }
+        
+        .map-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 12px;
+            transition: all 0.3s;
+        }
+        
+        .map-link:hover {
+            text-decoration: underline;
+            transform: translateX(3px);
+        }
+        
+        .budget-summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .budget-item {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .budget-amount {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+        
+        .budget-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .hotel-info {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: var(--radius);
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hotel-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 20px;
+        }
+        
+        .hotel-details h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .tab {
+                padding: 15px 10px;
+            }
+            
+            .budget-summary {
+                flex-direction: column;
+            }
+            
+            .tab-content {
+                padding: 20px;
+            }
+            
+            .couple-title {
+                font-size: 2rem;
+            }
+        }
+        
+        .activity-icon {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 1.5rem;
+            color: var(--primary);
+            opacity: 0.7;
+        }
+        
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .print-btn:hover {
+            transform: scale(1.1);
+            background: #b32c5d;
+        }
+        
+        .photo-spot {
+            display: inline-block;
+            background: #e7f3ff;
+            color: var(--secondary);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        
+        .romantic-note {
+            background: #ffe6f2;
+            padding: 15px;
+            border-radius: var(--radius);
+            margin: 15px 0;
+            border-left: 4px solid var(--primary);
+            font-style: italic;
+        }
+        
+        .total-cost {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: var(--radius);
+            margin: 20px 0;
+            text-align: center;
+            border: 2px dashed var(--primary);
+        }
+        
+        .total-cost h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .cost-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="couple-title"><span>Roc</span> & <span>Mel</span></h1>
+            <p>Nuestra Aventura Romántica en Budapest</p>
+            <div class="date-badge">18 - 21 de Noviembre · 3 Días Inolvidables</div>
+        </header>
+        
+        <div class="hotel-info">
+            <div class="hotel-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="hotel-details">
+                <h3>Nuestro Rincón en Budapest</h3>
+                <p><strong>Dirección:</strong> Budapest, Mária utca 30 1/6, 1085, Hungría</p>
+                <p><strong>Para nosotros:</strong> Ubicación perfecta para explorar juntos la ciudad</p>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('transporte')">
+                <i class="fas fa-subway"></i> Transporte
+            </div>
+            <div class="tab" onclick="openTab('dia1')">
+                <i class="fas fa-suitcase-rolling"></i> Día 1
+            </div>
+            <div class="tab" onclick="openTab('dia2')">
+                <i class="fas fa-landmark"></i> Día 2
+            </div>
+            <div class="tab" onclick="openTab('dia3')">
+                <i class="fas fa-swimming-pool"></i> Día 3
+            </div>
+            <div class="tab" onclick="openTab('presupuesto')">
+                <i class="fas fa-euro-sign"></i> Presupuesto
+            </div>
+        </div>
+        
+        <!-- PESTAÑA DE TRANSPORTE -->
+        <div id="transporte" class="tab-content active">
+            <h2 class="day-title"><i class="fas fa-subway"></i> Cómo Moverse por Budapest</h2>
+            
+            <div class="transport-card">
+                <h3 class="card-title"><i class="fas fa-ticket-alt"></i> Billetes de Transporte Público</h3>
+                <p>Precios vigentes para 2025 (1€ ≈ 385 HUF)</p>
+                <table>
+                    <tr>
+                        <th>Tipo de Billete</th>
+                        <th>Precio (HUF)</th>
+                        <th>Precio (aprox. €)</th>
+                        <th>Para nosotros</th>
+                    </tr>
+                    <tr>
+                        <td>Billete sencillo</td>
+                        <td>500 HUF</td>
+                        <td>~1.30€</td>
+                        <td>Si vamos a pocos sitios</td>
+                    </tr>
+                    <tr>
+                        <td>10 billetes (block)</td>
+                        <td>4,500 HUF</td>
+                        <td>~11.70€</td>
+                        <td>Perfecto para 3 días</td>
+                    </tr>
+                    <tr>
+                        <td>Billete 72 horas</td>
+                        <td>5,500 HUF</td>
+                        <td>~14.30€</td>
+                        <td>Si nos movemos mucho</td>
+                    </tr>
+                </table>
+                <div class="note">
+                    <strong><i class="fas fa-lightbulb"></i> Nuestra elección:</strong> El bloque de 10 billetes (11.70€) es perfecto para nuestros 3 días. Son 5 viajes cada uno.
+                </div>
+            </div>
+            
+            <div class="total-cost">
+                <h3>Coste Total Transporte</h3>
+                <div class="cost-amount">11.70€</div>
+                <p>para los dos (bloque de 10 billetes)</p>
+            </div>
+        </div>
+        
+        <!-- PESTAÑA DÍA 1 -->
+        <div id="dia1" class="tab-content">
+            <h2 class="day-title"><i class="fas fa-suitcase-rolling"></i> Día 1: Jueves 18 - Llegada y Primer Contacto</h2>
+            <p class="budget-label">Presupuesto estimado: 50-70€ para los dos</p>
+            
+            <div class="activity">
+                <span class="time">15:00 - 15:45</span>
+                <strong>Check-in en nuestro apartamento</strong>
+                <p>Dejamos las maletas en Mária utca 30 y nos instalamos en nuestro hogar temporal.</p>
+                <div class="activity-icon">
+                    <i class="fas fa-key"></i>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <span class="time">15:45 - 16:15</span>
+                <strong>Paseo hacia la Basílica</strong>
+                <p>Primer paseo juntos por Budapest para conocer la zona donde nos alojamos.</p>
+                <div class="activity-icon">
+                    <i class="fas fa-walking"></i>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <span class="time">16:15 - 17:15</span>
+                <strong>Visita Basílica de San Esteban <span class="photo-spot">FOTOS</span></strong>
+                <p>La iglesia más impresionante de Budapest. Subiremos a la cúpula para nuestras primeras fotos panorámicas juntos.</p>
+                <p>Entrada a la Basílica: <span class="price-tag">6€/persona</span>. Cúpula: <span class="price-tag">3€/persona</span>.</p>
+                <a href="https://basilica.hu/en/tickets/" class="btn" target="_blank">
+                    <i class="fas fa-ticket-alt"></i> Comprar Entradas Online
+                </a>
+                <div class="activity-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+            </div>
+            
+            <div class="romantic-note">
+                <i class="fas fa-heart"></i> Momento especial: En la cúpula de la Basílica al atardecer, con vistas de 360° sobre Budapest.
+            </div>
+            
+            <div class="activity">
+                <span class="time">19:30 - 21:00</span>
+                <strong>Cena en Street Food Karavan</strong>
+                <p>Nuestra primera cena en Budapest. Probaremos los famosos <strong>Smash Burgers de The Box Doner</strong>.</p>
+                <p><span class="price-tag">Coste: 18-22€</span> (2 hamburguesas + 2 bebidas)</p>
+                <a href="https://maps.app.goo.gl/KaravanBudapest" class="map-link" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i> Ver en mapa →
+                </a>
+                <div class="activity-icon">
+                    <i class="fas fa-hamburger"></i>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <span class="time">21:00 - 22:00+</span>
+                <strong>Ambiente en Szimpla Kert <span class="photo-spot">FOTOS</span></strong>
+                <p>Nuestra primera experiencia en un ruin bar. El lugar perfecto para tomar una cerveza juntos en un ambiente único.</p>
+                <p><span class="price-tag">2 cervezas: 6-10€</span></p>
+                <div class="activity-icon">
+                    <i class="fas fa-beer"></i>
+                </div>
+            </div>
+            
+            <div class="total-cost">
+                <h3>Coste Total Día 1</h3>
+                <div class="cost-amount">50-70€</div>
+                <p>para los dos (entradas, cena y bebidas)</p>
+            </div>
+        </div>
+        
+        <!-- PESTAÑA DÍA 2 -->
+        <div id="dia2" class="tab-content">
+            <h2 class="day-title"><i class="fas fa-landmark"></i> Día 2: Viernes 19 - La Colina de Buda & Magia Nocturna</h2>
+            <p class="budget-label">Presupuesto estimado: 80-110€ para los dos</p>
+            
+            <div class="activity">
+                <span class="time">09:00 - 09:30</span>
+                <strong>Subida a la Colina de Buda en Funicular</strong>
+                <p>Nuestro viaje en el histórico funicular con vistas panorámicas del Danubio.</p>
+                <p><span class="price-tag">Funicular (ida): 10€</span> (5€/persona)</p>
+                <div class="activity-icon">
+                    <i class="fas fa-mountain"></i>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <span class="time">09:30 - 11:30</span>
+                <strong>Bastión de los Pescadores & Iglesia de Matías <span class="photo-spot">FOTOS</span></strong>
+                <p>El lugar más fotogénico de Budapest. Torres blancas con vistas al Parlamento y al Danubio.</p>
+                <p>Bastión (parte premium): <span class="price-tag">10€</span> (5€/persona). Iglesia de Matías: <span class="price-tag">16€</span> (8€/persona).</p>
+                <a href="https://matyas-templom.hu/en/tickets/" class="btn" target="_blank">
+                    <i class="fas fa-ticket-alt"></i> Entradas Iglesia Matías
+                </a>
+                <div class="activity-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+            </div>
+            
+            <div class="romantic-note">
+                <i class="fas fa-heart"></i> Momento especial: En el Bastión de los Pescadores, con el Parlamento de fondo - la foto perfecta de nuestra pareja.
+            </div>
+            
+            <div class="activity">
+                <span class="time">15:30 - 17:00</span>
+                <strong>Mercado Central</strong>
+                <p>Probaremos juntos el Lángos (pan frito tradicional húngaro) y compraremos souvenirs.</p>
+                <p><span class="price-tag">2 Lángos: 8€</span> (4€ cada uno)</p>
+                <div class="activity-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <span class="time">19:00 - 20:30</span>
+                <strong>Cena en Getto Gulyás</strong>
+                <p>Nuestra cena romántica con auténtica comida húngara. Probaremos el gulash tradicional.</p>
+                <p><span class="price-tag">Cena para dos: 25-30€</span> (2 platos principales + bebidas)</p>
+                <div class="activity-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <span class="time">20:30 - 22:00</span>
+                <strong>🌟 Crucero Nocturno por el Danubio <span class="photo-spot">FOTOS</span></strong>
+                <p>El momento más romántico de nuestro viaje. El Parlamento iluminado es impresionante. Incluye 1 bebida cada uno.</p>
+                <p><span class="price-tag">30-40€</span> (15-20€/persona)</p>
+                <a href="https://legenda.hu/en" class="btn" target="_blank">
+                    <i class="fas fa-ship"></i> Reservar Crucero Romántico
+                </a>
+                <div class="activity-icon">
+                    <i class="fas fa-ship"></i>
+                </div>
+            </div>
+            
+            <div class="total-cost">
+                <h3>Coste Total Día 2</h3>
+                <div class="cost-amount">80-110€</div>
+                <p>para los dos (entradas, comida, cena y crucero)</p>
+            </div>
+        </div>
+        
+        <!-- PESTAÑA DÍA 3 -->
+        <div id="dia3" class="tab-content">
+            <h2 class="day-title"><i class="fas fa-swimming-pool"></i> Día 3: Sábado 20 - Relax en Termas & Aventura Nocturna</h2>
+            <p class="budget-label">Presupuesto estimado: 70-90€ para los dos</p>
+            
+            <div class="activity">
+                <span class="time">08:00 - 09:00</span>
+                <strong>Brunch en Cookie Beacon</strong>
+                <p>Empezamos el día con un brunch especial antes de ir a las termas.</p>
+                <p><span class="price-tag">Brunch para dos: 25-30€</span></p>
+                <div class="activity-icon">
+                    <i class="fas fa-coffee"></i>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <span class="time">09:30 - 13:00</span>
+                <strong>🌟 Termas Széchenyi <span class="photo-spot">FOTOS</span></strong>
+                <p>Una experiencia única juntos en las famosas termas al aire libre. Piscinas cálidas con arquitectura impresionante.</p>
+                <p><span class="price-tag">Entrada para dos: 40-50€</span> (20-25€/persona con cabina)</p>
+                <a href="https://www.szechenyifurdo.hu/en/tickets" class="btn" target="_blank">
+                    <i class="fas fa-ticket-alt"></i> Comprar Entradas Online
+                </a>
+                <div class="activity-icon">
+                    <i class="fas fa-swimming-pool"></i>
+                </div>
+            </div>
+            
+            <div class="romantic-note">
+                <i class="fas fa-heart"></i> Momento especial: Relajarnos juntos en las aguas termales, especialmente al anochecer cuando se encienden las luces.
+            </div>
+            
+            <div class="activity">
+                <span class="time">14:00 - 18:00</span>
+                <strong>Tarde libre y cena en casa</strong>
+                <p>Después de las termas, descansamos en nuestro apartamento y cenamos algo ligero que preparemos.</p>
+                <p><span class="price-tag">Cena en casa: 10-15€</span> (compra en supermercado)</p>
+                <div class="activity-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <span class="time">20:30 - 23:00</span>
+                <strong>Noche en el Ruin Bar Szimpla Kert</strong>
+                <p>Nuestra despedida de Budapest en el ruin bar más famoso. Ambiente único y divertido.</p>
+                <p><span class="price-tag">4 bebidas: 12-20€</span> (2 bebidas cada uno)</p>
+                <div class="activity-icon">
+                    <i class="fas fa-cocktail"></i>
+                </div>
+            </div>
+            
+            <div class="total-cost">
+                <h3>Coste Total Día 3</h3>
+                <div class="cost-amount">70-90€</div>
+                <p>para los dos (brunch, termas, cena y bebidas)</p>
+            </div>
+        </div>
+        
+        <!-- PESTAÑA PRESUPUESTO -->
+        <div id="presupuesto" class="tab-content">
+            <h2 class="day-title"><i class="fas fa-euro-sign"></i> Nuestro Presupuesto para Budapest</h2>
+            
+            <div class="budget-summary">
+                <div class="budget-item">
+                    <div class="budget-label">TRANSPORTE</div>
+                    <div class="budget-amount">12€</div>
+                    <p>Bloque de 10 billetes</p>
+                </div>
+                
+                <div class="budget-item">
+                    <div class="budget-label">ALOJAMIENTO</div>
+                    <div class="budget-amount">180€</div>
+                    <p>3 noches (60€/noche)</p>
+                </div>
+                
+                <div class="budget-item">
+                    <div class="budget-label">COMIDAS</div>
+                    <div class="budget-amount">100€</div>
+                    <p>2 cenas fuera + brunch</p>
+                </div>
+            </div>
+            
+            <div class="budget-summary">
+                <div class="budget-item">
+                    <div class="budget-label">ENTRADAS</div>
+                    <div class="budget-amount">85€</div>
+                    <p>Basílica, Bastión, Iglesia, Termas</p>
+                </div>
+                
+                <div class="budget-item">
+                    <div class="budget-label">ACTIVIDADES</div>
+                    <div class="budget-amount">40€</div>
+                    <p>Crucero nocturno</p>
+                </div>
+                
+                <div class="budget-item">
+                    <div class="budget-label">BEBIDAS</div>
+                    <div class="budget-amount">30€</div>
+                    <p>Ruin bars y cenas</p>
+                </div>
+            </div>
+            
+            <div class="total-cost" style="margin-top: 30px;">
+                <h3>PRESUPUESTO TOTAL</h3>
+                <div class="cost-amount">447€</div>
+                <p>para los dos (223.50€ por persona)</p>
+            </div>
+            
+            <div class="note">
+                <strong><i class="fas fa-lightbulb"></i> Consejos para ahorrar:</strong>
+                <ul>
+                    <li>Desayunamos y cenamos algunos días en el apartamento</li>
+                    <li>Usamos el bloque de 10 billetes en lugar de pases diarios</li>
+                    <li>Visitamos lugares con partes gratuitas (Bastión, Castillo de Buda)</li>
+                    <li>Comemos street food en lugar de restaurantes caros</li>
+                </ul>
+            </div>
+            
+            <div class="romantic-note">
+                <i class="fas fa-heart"></i> Incluye 50€ extra para imprevistos y pequeños caprichos durante el viaje.
+            </div>
+        </div>
+        
+        <footer>
+            <p>¡Nuestra aventura en Budapest será inolvidable! ❤️</p>
+            <p>Roc & Mel - Noviembre 2025</p>
+        </footer>
+    </div>
 
+    <div class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabContent, tabs;
+            
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            
+            tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
