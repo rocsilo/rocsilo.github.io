@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Guía para Budapest - 18 al 21 de Noviembre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0059a3;
+            --secondary: #d43571;
+            --light: #f8f9fa;
+            --dark: #333;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(135deg, var(--primary), #003366);
+            color: white;
+            border-radius: 15px 15px 0 0;
+            box-shadow: var(--shadow);
+        }
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            opacity: 0.9;
+        }
+        .date-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+        .tabs {
+            display: flex;
+            background: white;
+            border-radius: 0 0 15px 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px 5px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            color: var(--dark);
+            border-bottom: 3px solid transparent;
+        }
+        .tab:hover {
+            background: #f0f0f0;
+        }
+        .tab.active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+        }
+        .tab-content {
+            display: none;
+            padding: 25px;
+            background: white;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .day-title {
+            color: var(--primary);
+            border-left: 4px solid var(--secondary);
+            padding-left: 15px;
+            margin: 20px 0 15px;
+        }
+        .activity {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+        }
+        .time {
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+        .price-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
+        .transport-card, .budapest-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: var(--shadow);
+            border: 1px solid #e0e0e0;
+        }
+        .card-title {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .card-title i {
+            margin-right: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: var(--primary);
+        }
+        .savings-calc {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .note {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .btn:hover {
+            background: #004080;
+            transform: translateY(-2px);
+        }
+        .map-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            .tabs {
+                flex-direction: column;
+            }
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-map-marked-alt"></i> Mi Aventura en Budapest</h1>
+            <p>18 - 21 de Noviembre · 3 Días Inolvidables</p>
+            <div class="date-badge">Alojamiento: Mária utca 30</div>
+        </header>
+        
+        <div class="tabs">
+            <div class="tab active" onclick="openTab('transporte')">Transporte</div>
+            <div class="tab" onclick="openTab('dia1')">Día 1</div>
+            <div class="tab" onclick="openTab('dia2')">Día 2</div>
+            <div class="tab" onclick="openTab('dia3')">Día 3</div>
+        </div>
+        
+        <!-- PESTAÑA DE TRANSPORTE -->
+        <div id="transporte" class="tab-content active">
+            <h2 class="day-title"><i class="fas fa-subway"></i> Cómo Moverse por Budapest</h2>
+            
+            <div class="transport-card">
+                <h3 class="card-title"><i class="fas fa-ticket-alt"></i> Billetes de Transporte Públic
